@@ -11,12 +11,15 @@ from myphoto import photo_send
 '''
 bot_name: "DSPLabs_HH_by_Spiritgyx",
 bot_username: "DSPLabs_HH_bot",
-token: "1264077369:AAG3rgZ-HknD4mme-u2P1AKr0hC9RTi0E5Y"
+token: "TOKEN"
 '''
 
-TOKEN = '1264077369:AAG3rgZ-HknD4mme-u2P1AKr0hC9RTi0E5Y'
+TOKEN = ''  # enter TOKEN
 GET_URL = 'https://api.telegram.org/file/bot%s/%s'  # %(TOKEN, file_path)
 DIRS = ['photos', 'voice']
+
+if TOKEN == '':
+    TOKEN = input('Enter TOKEN: ')
 
 for d in DIRS:
     if not os.path.exists(d) and not os.path.isdir(d):
