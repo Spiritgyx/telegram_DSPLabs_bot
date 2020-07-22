@@ -18,6 +18,10 @@ TOKEN = '1264077369:AAG3rgZ-HknD4mme-u2P1AKr0hC9RTi0E5Y'
 GET_URL = 'https://api.telegram.org/file/bot%s/%s'  # %(TOKEN, file_path)
 DIRS = ['photos', 'voice']
 
+for d in DIRS:
+    if not os.path.exists(d) and not os.path.isdir(d):
+        os.mkdir(d)
+
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
